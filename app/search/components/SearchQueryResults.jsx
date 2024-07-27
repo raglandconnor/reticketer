@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from 'axios';
 
 let displayResults = false;
 const SearchQueryResults = () => {
@@ -10,19 +9,16 @@ const SearchQueryResults = () => {
   const [date, setDate] = useState('');
   const [filteredTickets, setFilteredTickets] = useState([]);
 
-  
-const[tickets, setTickets]= useState([])
+  const [tickets, setTickets] = useState([]);
 
-const fetchTickets = async () => {
+  const fetchTickets = async () => {
     try {
-        const response = await axios.get('http://localhost:3001/getTickets');
-        console.log(response.data);
+      const response = await axios.get('http://localhost:3001/getTickets');
+      console.log(response.data);
     } catch (error) {
-        console.error('Error fetching tickets:', error);
+      console.error('Error fetching tickets:', error);
     }
-};
-
-
+  };
 
   // useEffect(()=>{
   //   axios.get('http:localhost:3001/getTickets')
@@ -31,7 +27,7 @@ const fetchTickets = async () => {
   // })
   const eventChange = (event) => {
     setEventName(event.target.value);
-    console.log("here is the input ", event.target.value);
+    console.log('here is the input ', event.target.value);
   };
   const locationChange = (event) => {
     setLocationName(event.target.value);
@@ -40,25 +36,30 @@ const fetchTickets = async () => {
     setDate(event.target.value);
   };
 
- const click = () => {
+  const click = () => {
     const query = {};
-    displayResults= false;  
+    displayResults = false;
     if (eventName) query.event = eventName.trim();
-    console.log(query.event, "query event ")
+    console.log(query.event, 'query event ');
     if (locationName) query.location = locationName;
-    console.log(query.location, "query location ")
+    console.log(query.location, 'query location ');
     if (date) query.date = date;
-   
+
     fetchTickets();
     if (Object.keys(query).length === 0) {
-    
       setFilteredTickets(tickets);
     } else {
-    
-      const newFilteredTickets = tickets.filter(ticket => {
+      const newFilteredTickets = tickets.filter((ticket) => {
         let isMatch = true;
         for (const key in query) {
-          if (query[key] && ticket[key] && !ticket[key].toString().toLowerCase().includes(query[key].toLowerCase())) {
+          if (
+            query[key] &&
+            ticket[key] &&
+            !ticket[key]
+              .toString()
+              .toLowerCase()
+              .includes(query[key].toLowerCase())
+          ) {
             isMatch = false;
             break;
           }
@@ -66,13 +67,10 @@ const fetchTickets = async () => {
         return isMatch;
       });
 
-     
       setFilteredTickets(newFilteredTickets);
     }
-   
 
     displayResults = true;
- 
   };
 
   const [searchQuery, setSearchQuery] = useState('temp search query');
@@ -101,7 +99,8 @@ const fetchTickets = async () => {
         />
         <button
           onClick={click}
-          className="border-2 border-black bg-gray-100 rounded p-2">
+          className="border-2 border-black bg-gray-100 rounded p-2"
+        >
           Search
         </button>
       </div>
@@ -112,9 +111,7 @@ const fetchTickets = async () => {
           <p className="text-muted-foreground text-sm">
             ({numResults} results)
           </p>
-        
         </div>
-        
       )}
     </div>
   );

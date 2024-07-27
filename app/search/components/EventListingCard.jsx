@@ -58,14 +58,22 @@
 //   postedDate: PropTypes.string.isRequired,
 // };
 
-
 // EventListingCard.js
 'use client';
+
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-export function EventListingCard({ sellerName, eventTitle, eventPrice, eventDate, postedDate }) {
+export function EventListingCard({ seller, price, title, location, date }) {
+  //   const [sellerImage, setSellerImage] = useState('');
+  const [sellerName, setSellerName] = useState(seller);
+  const [eventTitle, setEventTitle] = useState(title);
+  const [eventPrice, setEventPrice] = useState(price);
+  const [eventDate, setEventDate] = useState(date);
+  const [eventLocation, setEventLocation] = useState(location);
+  // const [postedDate, setPostedDate] = useState('07/07/07');
   return (
     <div className="w-full group/card">
       <div
@@ -76,34 +84,34 @@ export function EventListingCard({ sellerName, eventTitle, eventPrice, eventDate
       >
         <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
         <div className="flex flex-row items-center space-x-4 z-10">
-          <Image
+          {/* <Image
             height="100"
             width="100"
             alt="Avatar"
             src="/manu.png" // You might want to replace this with dynamic seller images
             className="h-10 w-10 rounded-full border-2 object-cover"
-          />
+          /> */}
           <div className="flex flex-col">
             <p className="font-normal text-base text-gray-50 relative z-10">
               {sellerName}
             </p>
             <p className="text-sm text-gray-400">
-              {eventDate}{' '}
-              <span className="text-xs opacity-75">(Posted: {postedDate})</span>
+              {eventDate}
+              <span className="ml-2 text-xs opacity-75">{eventLocation}</span>
             </p>
           </div>
         </div>
         <div className="text content">
           <div className="flex flex-row items-baseline justify-between">
-            <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
+            <h1 className="font-bold text-2xl md:text-2xl text-gray-50 relative z-10">
               {eventTitle}
             </h1>
             <p className="text-gray-50">${eventPrice}</p>
           </div>
-          <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
+          {/* <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
             Event Description Lorem ipsum, dolor sit amet consectetur
             adipisicing elit. Explicabo velit ab, autem
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
