@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="flex flex-col items-center pt-96 pb-12">
       <div className="flex-col justify-center items-center">
         <div className="flex-row justify-between items-center md:w-[720px] lg:w-[860px] xl:w-[920px] border-t-2 pt-10">
-          <div className="flex flex-row items-center justify-between mb-2">
+          <div className="grid md:grid-cols-2 gap-4 items-center justify-between mb-2">
             <Link
               href="/"
               className="text-lg font-semibold text-foreground mr-4"
             >
               Reticketer
             </Link>
-            <div>
+            <div className="flex justify-end">
               <ul className="flex flex-row items-center text-sm text-muted-foreground">
                 <li className="mr-6 scale-150 hover:text-black cursor-pointer">
                   {/* Place repo link once public */}
@@ -22,8 +22,8 @@ const Footer = () => {
                     <FaGithub />
                   </a>
                 </li>
-                <li className="mr-4">Created by:</li>
-                <li className="mr-4">
+                <li className="hidden md:visible mr-4">Created by:</li>
+                <li className="mr-3">
                   <a
                     href=""
                     target="_blank"
@@ -32,7 +32,7 @@ const Footer = () => {
                     Adithya
                   </a>
                 </li>
-                <li className="mr-4">
+                <li className="mr-3">
                   <a
                     href=""
                     target="_blank"
@@ -41,7 +41,7 @@ const Footer = () => {
                     Angelina
                   </a>
                 </li>
-                <li className="mr-4">
+                <li className="mr-3">
                   <a
                     href="https://www.raglandconnor.com/"
                     target="_blank"
@@ -50,7 +50,7 @@ const Footer = () => {
                     Connor
                   </a>
                 </li>
-                <li className="mr-4">
+                <li className="mr-3">
                   <a
                     href=""
                     target="_blank"
@@ -62,10 +62,10 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <p className="text-muted-foreground">
-            © All rights reserved. 2024-present.
-          </p>
         </div>
+        <p className="text-sm text-muted-foreground">
+          © All rights reserved. 2024-present.
+        </p>
       </div>
     </footer>
   );
