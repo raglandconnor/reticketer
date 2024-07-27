@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Button } from '@/components/ui/button';
 
 export function Contact() {
@@ -12,7 +13,7 @@ export function Contact() {
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        access_key: 'YOUR_ACCESS_KEY_HERE',
+        access_key: process.env.NEXT_PUBLIC_WEB_ACCESS_KEY,
         name: e.target.name.value,
         email: e.target.email.value,
         message: e.target.message.value,
