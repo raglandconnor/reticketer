@@ -9,9 +9,9 @@ mongoose.connect("mongodb://localhost:27017/reticketer")
 })
 
 const ticketSchema = new mongoose.Schema({
-    selller:{
-type:String,
-required:true
+    seller:{
+    type:String,
+    required:true
     },
     event:{
         type:String,
