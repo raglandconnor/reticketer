@@ -26,7 +26,7 @@ function HeroSection() {
           <Button buttonStyle='btn--outline'
             buttonSize='btn--large'
             href='/sell'>
-          Sell Tickets!
+          Sell Tickets
           </Button>
         </div>
       </div>
