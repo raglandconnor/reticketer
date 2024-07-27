@@ -18,7 +18,7 @@ const Footer = () => {
               <ul className="flex flex-row items-center text-sm text-muted-foreground">
                 <li className="mr-6 scale-150 hover:text-black cursor-pointer">
                   {/* Place repo link once public */}
-                  <a href="" target="_blank">
+                  <a href="https://github.com/raglandconnor/reticketer" target="_blank">
                     <FaGithub />
                   </a>
                 </li>
@@ -52,7 +52,7 @@ const Footer = () => {
                 </li>
                 <li className="mr-3">
                   <a
-                    href=""
+                    href="https://poiixen.github.io/"
                     target="_blank"
                     className="hover:underline hover:text-black"
                   >

@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css'; // Import the CSS file for styling
+import Map from './Map.js'; // Import the Map component
 
 const About = () => {
   return (
@@ -27,6 +28,7 @@ const About = () => {
             </p>
           </div>
         </div>
+        <Map /> {/* Add the Map component here */}
       </div>
     </section>
   );
