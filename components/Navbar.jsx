@@ -20,6 +20,7 @@ import {
   SheetTrigger,
 } from './ui/sheet';
 // import ModeToggle from "./mode-toggle"
+import { IoSearchOutline } from 'react-icons/io5';
 
 export function NavBar() {
   return (
@@ -43,6 +44,14 @@ export function NavBar() {
                 </Link>
               </DialogClose>
               <DialogClose asChild>
+                <Link href="/search">
+                  <Button variant="outline" className="w-full">
+                    <IoSearchOutline className="mr-2" />
+                    Search
+                  </Button>
+                </Link>
+              </DialogClose>
+              <DialogClose asChild>
                 <Link href="/contact">
                   <Button variant="outline" className="w-full">
                     Contact
@@ -50,9 +59,9 @@ export function NavBar() {
                 </Link>
               </DialogClose>
               <DialogClose asChild>
-                <Link href="/login">
+                <Link href="/sell-tickets">
                   <Button variant="" className="w-full">
-                    Log In
+                    Sell Tickets
                   </Button>
                 </Link>
               </DialogClose>
@@ -68,11 +77,17 @@ export function NavBar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-2 max-[825px]:hidden">
+          <Link href="/search">
+            <Button variant="outline">
+              <IoSearchOutline className="mr-2" />
+              Search
+            </Button>
+          </Link>
           <Link href="/contact">
             <Button variant="outline">Contact</Button>
           </Link>
-          <Link href="/login">
-            <Button variant="">Log In</Button>
+          <Link href="/sell-tickets">
+            <Button variant="">Sell Tickets</Button>
           </Link>
           {/* <ModeToggle /> */}
         </div>
