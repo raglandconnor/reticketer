@@ -1,7 +1,8 @@
 // components/HeroSection.js
 import React from 'react';
-import { Button } from './Button';
+import { Button } from '@/components/ui/button';
 import './HeroSection.css';
+import Link from 'next/link';
 
 function HeroSection() {
   return (
@@ -54,3 +55,4 @@ function HeroSection() {
 }
 
 export default HeroSection;
+
