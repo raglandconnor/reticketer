@@ -1,4 +1,5 @@
 'use client';
+
 import { cn } from '@/lib/utils';
 import { BookOpen, MenuIcon } from 'lucide-react';
 import Link from 'next/link';
