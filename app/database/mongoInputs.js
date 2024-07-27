@@ -32,7 +32,7 @@ const ticketSchema = new mongoose.Schema({
 
 const collection = new mongoose.model('tickets',ticketSchema)
 data={
-    sellerEmail:"seller@gmail.com",
+    seller:"seller@gmail.com",
     event:"apples",
     price:40,
     location:"norway",
