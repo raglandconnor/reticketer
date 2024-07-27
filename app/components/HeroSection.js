@@ -5,7 +5,7 @@ import './HeroSection.css';
 function HeroSection() {
   return (
     <div className='hero-container'>
-      <h1>Ticket Trade</h1>
+      <h1>Reticketer</h1>
       <p>The Ultimate Ticket Reselling Platform</p>
       <div className='hero-btns'>
         <Button
