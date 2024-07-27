@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col items-center pt-96 pb-12">
       <div className="flex-col justify-center items-center">
-        <div className="flex-row justify-between items-center md:w-[720px] lg:w-[860px] xl:w-[920px] border-t-2 pt-10">
+        <div className="flex-row justify-between items-center md:w-[720px] lg:w-[860px] xl:w-[920px] 2xl:w-[1200px] border-t-2 pt-10">
           <div className="grid md:grid-cols-2 gap-4 items-center justify-between mb-2">
             <Link
               href="/"
