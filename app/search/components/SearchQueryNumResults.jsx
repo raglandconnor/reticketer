@@ -4,50 +4,49 @@ import React, { useState } from 'react';
 let displayResults = false;
 const SearchQueryNumResults = () => {
   const [eventName, setEventName] = useState('');
-  const [locationName, setLocationName]= useState('');
-  const [date, setDate]= useState('');
+  const [locationName, setLocationName] = useState('');
+  const [date, setDate] = useState('');
 
-  const click = () =>{
+  const click = () => {
     displayResults = true;
-  }
-  const eventChange = event =>{
-    setEventName(event.target.value)
-  }
-  const locationChange = event =>{
-    setLocationName(event.target.value)
-  }
-  const dateChange = event =>{
-    setDate(event.target.value)
-  }
+  };
+  const eventChange = (event) => {
+    setEventName(event.target.value);
+  };
+  const locationChange = (event) => {
+    setLocationName(event.target.value);
+  };
+  const dateChange = (event) => {
+    setDate(event.target.value);
+  };
 
   const [searchQuery, setSearchQuery] = useState('temp search query');
   const [numResults, setNumResults] = useState(93786);
-  
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex gap-4 items-center">
-        <input 
-          onChange={eventChange} 
-          value={eventName} 
-          className="border-2 border-black rounded p-2"
+      <div className="grid md:grid-cols-7 gap-4 items-center">
+        <input
+          onChange={eventChange}
+          value={eventName}
+          className="md:col-span-2 border-2 border-black rounded p-2"
           placeholder="Enter event name"
         />
-        <input 
-          onChange={locationChange} 
-          value={locationName} 
-          className="border-2 border-black rounded p-2"
+        <input
+          onChange={locationChange}
+          value={locationName}
+          className="md:col-span-2 border-2 border-black rounded p-2"
           placeholder="Enter location"
         />
-        <input 
-          onChange={dateChange} 
-          value={date} 
-          className="border-2 border-black rounded p-2"
+        <input
+          onChange={dateChange}
+          value={date}
+          className="md:col-span-2 border-2 border-black rounded p-2"
           placeholder="Enter date (YYYY-MM-DD)"
         />
-        <button 
-          onClick={click} 
-          className="border-2 border-black rounded p-2"
+        <button
+          onClick={click}
+          className="border-2 border-black bg-gray-100 rounded p-2"
         >
           Search
         </button>
@@ -56,7 +55,9 @@ const SearchQueryNumResults = () => {
       {displayResults && (
         <div className="mt-4">
           <p className="font-bold text-xl">{searchQuery}</p>
-          <p className="text-muted-foreground text-sm">({numResults} results)</p>
+          <p className="text-muted-foreground text-sm">
+            ({numResults} results)
+          </p>
         </div>
       )}
     </div>
