@@ -24,7 +24,7 @@ import { IoSearchOutline } from 'react-icons/io5';
 
 export function NavBar() {
   return (
-    <div className="flex items-center min-w-full w-full fixed justify-center z-[50] mt-4">
+    <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50] mt-[2rem]">
       <div className="flex justify-between md:w-[720px] lg:w-[860px] xl:w-[920px] 2xl:w-[1200px] w-[95%] border dark:border-zinc-900 dark:bg-black bg-opacity-80 relative backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 rounded-xl p-2 shadow-lg">
         <Dialog>
           <SheetTrigger className="min-[825px]:hidden p-2 transition">
@@ -72,7 +72,7 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:hidden ">
             <Link href="/" className="pl-2">
-              <h1 className="font-semibold text-xl">Reticketer</h1>
+              <h1 className="font-bold">Home</h1>
             </Link>
           </NavigationMenuList>
         </NavigationMenu>

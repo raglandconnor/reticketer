@@ -1,21 +1,8 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import dummyData from '@/app/api/items/dummy_data';
 
 const ListingPage = ({ params }) => {
-  const listing = dummyData.find((listing) => listing.id === params.listingId);
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    });
-  };
-
   return (
     <main className="flex min-h-screen flex-col items-center py-32">
       <div className="w-[300px] md:w-[720px] lg:w-[860px] xl:w-[920px] 2xl:w-[1200px]">
@@ -30,12 +17,12 @@ const ListingPage = ({ params }) => {
           </div>
           <div>
             <div className="mb-6">
-              <h1 className="text-5xl font-semibold">{listing.title}</h1>
-              <p className="text-2xl">{`${listing.location.city}, ${listing.location.state}`}</p>
+              <h1 className="text-3xl font-semibold">Event Title</h1>
+              <p>Event location</p>
               <p className="text-sm text-muted-foreground">
-                {formatDate(listing.date)}
+                Saturday, November 23, 2024
               </p>
-              <p className="text-lg font-semibold">${listing.money}</p>
+              <p className="font-semibold">$51</p>
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
@@ -48,6 +35,13 @@ const ListingPage = ({ params }) => {
             </div>
           </div>
         </section>
+        <h1 className="text-5xl mt-12">
+          Listing id that we will use to dynamically display a listing for
+          tickets:{' '}
+          <span className="underline font-bold bg-green-500">
+            {params.listingId}
+          </span>
+        </h1>
       </div>
     </main>
   );

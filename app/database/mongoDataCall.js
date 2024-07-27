@@ -1,69 +1,49 @@
-// const mongoose = require('mongoose');
-// const express = require('express');
-// const cors = require('cors')
-// const TicketModel = require('./models/ticket')
-
-// const app = express()
-// app.use(cors())
-// app.use(express.json())
-
-// mongoose.connect("mongodb://localhost:27017/reticketer")
-
-// app.get('/getTickets', (req, res)=>{
-//     TicketModel.find().
-//     then(tickets => res.json(tickets))
-//     .catch(err => res.json(err))
-//         console.log(err)
-//     })
-
-
-
-// app.listen(3001,()=>{
-//     console.log("Server is running")
-// })
-
-
-
-
-
-// module.exports = {
-//     getTickets
-// };
-
-
 const express = require('express')
 const mongoose = require('mongoose')
-const cors = require('cors')
 
-const app = express()
+const app = express();
 
-// const app = express()
-app.use(cors({
-    origin: 'http://localhost:3000'  // Replace with your frontend's URL
-  }));
-// app.use(express.json())
+mongoose.connect('mongodb://localhost:27017/reticketer',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
 
-mongoose.connect("mongodb://localhost:27017/reticketer")
-
-const TicketSchema = new mongoose.Schema({
-    seller: String,
-    event: String, 
-    price: Number,
-    location: String,
-    date: String
+const ticketSchema = mongoose.Schema({
+    event:String,
+    price:Number,
+    location:String,
+    date:String
 })
 
-const TicketModel = mongoose.model("tickets", TicketSchema)
+const TicketModel = mongoose.model("tickets", ticketSchema)
 
-app.get("/getTickets", (req, res)=>{
-    TicketModel.find({}).then(function(tickets){
-        res.json(tickets)})
-        .catch(function(err){
-            console.log(err)
-        })
+
+app.get("/getTickets",(req,res)=>{
+    const { event, location, date } = req.query;
+  const query = {};
+
+  if (event) {
+    query.event = event;
+  }
+  if (location) {
+    query.location = location;
+  }
+  if (date) {
+    query.date = date;
+  }
+
+  TicketModel.find(query)
+    .then(tickets => {
+      res.json(tickets);
     })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send('Error fetching tickets');
+    });
+});
 
 
-    app.listen(3001,()=>{
-        console.log("server is running")
-    })
+app.listen(3001, ()=>{
+    console.log("Server is running")
+});
+
