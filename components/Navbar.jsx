@@ -72,7 +72,7 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:hidden ">
             <Link href="/" className="pl-2">
-              <h1 className="font-bold">Home</h1>
+              <h1 className="font-semibold text-xl">Reticketer</h1>
             </Link>
           </NavigationMenuList>
         </NavigationMenu>
