@@ -25,7 +25,7 @@ const Footer = () => {
                 <li className="hidden md:visible mr-4">Created by:</li>
                 <li className="mr-3">
                   <a
-                    href=""
+                    href="https://adithyadevi.com/"
                     target="_blank"
                     className="hover:underline hover:text-black"
                   >
@@ -34,7 +34,7 @@ const Footer = () => {
                 </li>
                 <li className="mr-3">
                   <a
-                    href=""
+                    href="https://angelinali.me/"
                     target="_blank"
                     className="hover:underline hover:text-black"
                   >
