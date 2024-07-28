@@ -1,6 +1,9 @@
 import React from 'react';
 import SearchQueryNumResults from './components/SearchQueryNumResults';
 import { EventListingCard } from './components/EventListingCard';
+import { dummyData } from '../api/items/dummy_data.js';
+import Link from 'next/link';
+import { LoaderPinwheel } from 'lucide-react';
 
 const Search = () => {
   return (

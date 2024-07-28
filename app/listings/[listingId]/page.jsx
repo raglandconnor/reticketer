@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { dummyData } from '@/app/api/items/dummy_data';
 
 const ListingPage = ({ params }) => {
   return (
@@ -24,12 +25,16 @@ const ListingPage = ({ params }) => {
               </p>
               <p className="font-semibold">$51</p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
-              facilis. Inventore ut, reiciendis possimus pariatur similique quae
-              sapiente repudiandae rerum quisquam consectetur ipsa quia numquam
-              nesciunt commodi doloremque, odio quasi?
-            </p>
+            {listing.description ? (
+              <p>{listing.description}</p>
+            ) : (
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, facilis. Inventore ut, reiciendis possimus pariatur
+                similique quae sapiente repudiandae rerum quisquam consectetur
+                ipsa quia numquam nesciunt commodi doloremque, odio quasi?
+              </p>
+            )}
             <div className="mt-4">
               <Button>Purchase Ticket</Button>
             </div>
