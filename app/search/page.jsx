@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchQueryResults from './components/SearchQueryResults';
 import { EventListingCard } from './components/EventListingCard';
-import { dummyData } from '../api/items/dummy_data';
+import { dummyData } from '../database/dummy_data';
 import Link from 'next/link';
 
 const Search = () => {
@@ -35,7 +35,7 @@ const Search = () => {
       const locationString = `${listing.location.city}, ${listing.location.state}`;
 
       return (
-        <Link href={`listings/${listing.id}`}>
+        <Link key={listing.id} href={`listings/${listing.id}`}>
           <EventListingCard
             key={listing.id}
             seller={listing.name}

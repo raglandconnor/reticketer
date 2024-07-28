@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
-import { generateRandomId, insertNewListing } from '@/app/api/items/dummy_data';
+import { generateRandomId, insertNewListing } from '@/app/database/dummy_data';
 import { useRouter } from 'next/navigation';
 
 export function UserAuthForm({ className, ...props }) {
@@ -53,7 +53,7 @@ export function UserAuthForm({ className, ...props }) {
     setTimeout(() => {
       setIsLoading(false);
       router.push(`/listings/${randomId}`);
-    }, 3000);
+    }, 1000);
   }
 
   function handleChange(event) {

@@ -1,7 +1,6 @@
 /* About.css */
 .how-it-works {
   padding: 50px 20px;
-  background-color: #f9f9f9;
   color: #333;
 }
 
@@ -51,6 +50,6 @@
 
 @media (max-width: 768px) {
   .how-it-works-steps {
-      flex-direction: column;
+    flex-direction: column;
   }
 }

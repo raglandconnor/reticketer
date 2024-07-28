@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { dummyData } from '@/app/api/items/dummy_data';
+import { dummyData } from '@/app/database/dummy_data';
 
 const ListingPage = ({ params }) => {
   const listing = dummyData.find((listing) => listing.id === params.listingId);
