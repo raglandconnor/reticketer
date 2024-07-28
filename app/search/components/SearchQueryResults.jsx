@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import axios from 'axios';
 import { dummyData } from '@/app/api/items/dummy_data';
 import { EventListingCard } from './EventListingCard';
 import { Button } from '@/components/ui/button';

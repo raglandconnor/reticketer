@@ -1,5 +1,5 @@
 // app/api/items/route.js
-import { Pool } from 'pg';
+// import { Pool } from 'pg';
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
