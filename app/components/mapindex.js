@@ -1,3 +1,4 @@
+/*
 import React, { useEffect } from 'react';
 
 const Home = () => {
@@ -16,3 +17,4 @@ const Home = () => {
 };
 
 export default Home;
+*/

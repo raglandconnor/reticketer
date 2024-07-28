@@ -1,3 +1,4 @@
+/*
 'use client';
 
 import { useEffect } from 'react';
@@ -37,3 +38,4 @@ const MapPage = () => {
 };
 
 export default MapPage;
+*/

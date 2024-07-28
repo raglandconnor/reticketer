@@ -28,7 +28,6 @@ const About = () => {
             </p>
           </div>
         </div>
-        <Map /> {/* Add the Map component here */}
       </div>
     </section>
   );
