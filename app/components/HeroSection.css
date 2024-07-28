@@ -29,9 +29,25 @@ video {
   margin-top: 8px;
   color: #fff;
   text-shadow: #0000008d 0px 0px 10px;
-  font-size: 32px;
+  font-size: 28px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    background: none;
+    height: 100vh;
+  }
+  .hero-container > h1 {
+    color: #000000;
+    text-shadow: #0000008d 0px 0px 1px;
+  }
+
+  .hero-container > p {
+    color: #000000;
+    text-shadow: #0000008d 0px 0px 1px;
+  }
 }
 
 .hero-btns {
